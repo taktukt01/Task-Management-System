@@ -1,0 +1,190 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div class="d-flex content-between">
+
+  <mat-toolbar color="accent">
+    Task Details
+  </mat-toolbar>
+
+  <a></a>
+
+  <a mat-raised-button color="primary" (click)="openDialog()">
+    <mat-icon>
+      horizontal_split
+    </mat-icon>
+    Add Task
+  </a>
+</div>
+
+
+<!-- <div class="d-flex justify-content-end mt-3">
+  <form class="form-inline waves-light" mdbWavesEffect #searchForm="ngForm" (ngSubmit)="search(searchText)" method="GET">
+    <div class="md-form mt-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)] = "searchText">
+    </div>
+  </form>
+</div> -->
+
+<div>
+
+
+  <label for="tasksPerPage">Show</label>
+  <select id="tasksPerPage">
+    <option value="5">
+      5
+    </option>
+
+    <option value="10">
+
+      10
+    </option>
+
+
+    <option value="15">
+      15
+
+    </option>
+
+  </select>
+  <label>Entries</label>
+
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
+  <label for="tasksPerPage">Order by</label>
+  <select id="tasksPerPage">
+    <option value="QuoteType">
+      Quote Type
+    </option>
+
+    <option value="QuoteNum">
+
+      Quote#
+    </option>
+
+
+    <option value="Contact">
+      Contact
+
+    </option>
+
+    <option value="TaskDescription">
+      Task Description
+
+    </option>
+
+
+    <option value="Due_Date">
+      Due Date
+
+    </option>
+
+    <option value="Task_Type">
+      Task Type
+
+    </option>
+
+  </select>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
+  <label for="descending">Descending</label>&nbsp;
+  &nbsp;
+
+  <input type ="checkbox" id="descending"> 
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
+
+  <mat-form-field>
+    <input id="searchBar" matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Search">
+  </mat-form-field>
+</div>
+<button (click)="Logout()">
+  Logout
+</button>
+<!-- 
+    Get data 
+    Pagination
+    Sorting
+ -->
+<table mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Quote_Type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Quote Type. </th>
+    <td mat-cell *matCellDef="let task"> {{task.Quote_Type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="QuoteID">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Quote # </th>
+    <td mat-cell *matCellDef="let task"> {{task.QuoteID}} </td>
+  </ng-container>
+  <!-- TODO: show the data ONLY when view is clicked 
+  -->
+  <ng-container matColumnDef="Contact">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+    <td mat-cell *matCellDef="let task">  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Task_Description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Description </th>
+    <td mat-cell *matCellDef="let task"> {{task.Task_Description | titlecase}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Due_Date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
+    <td mat-cell *matCellDef="let task"> {{task.Due_Date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Task_Type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Task Type </th>
+    <td mat-cell *matCellDef="let task"> {{task.Task_Type}} </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="actionsColumn">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+
+    <td mat-cell *matCellDef="let task">
+      <!--VIEW TASK DETAILS  -->
+      <a class="text-dark"(click)="openDetailDialog(task)">
+        <mat-icon>
+          remove_red_eye
+        </mat-icon>
+      </a>
+      <!-- EDIT TASK  -->
+      <a class="text-dark" (click)="openEditDialog(task)">
+        <mat-icon>
+          create
+        </mat-icon>
+      </a>
+      <!-- DELETE TASK -->
+      <a class="text-dark" (click)="deleteTask(task.QuoteID)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </a>
+    </td>
+
+  </ng-container>
+  <!-- defining the columns -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+
+
+
+<!-- <app-update-task></app-update-task> -->

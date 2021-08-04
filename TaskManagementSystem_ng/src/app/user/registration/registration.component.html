@@ -1,0 +1,91 @@
+<!-- 
+  <div class="container d-flex justify-content-center" class="border-round">
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <div class="col-lg-6">
+    <div class="row px-3"> <label class="mb-1">
+        <h6 class="mb-0 text-sm">Email Address</h6>
+      </label>
+      <input class="mb-4" type="text" name="email" placeholder="email address" ngModel>
+    </div>
+
+    <div class="row px-3"> <label class="mb-1">
+        <h6 class="mb-0 text-sm">Password</h6>
+      </label> <input type="password" name="password" placeholder="password" ngModel>
+    </div>
+
+
+    <div class="row px-3 mb-4">
+      <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk"
+            class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label>
+          </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+        </div> 
+      <div class="row mb-3 px-3">
+        <button type="submit" class="btn btn-primary text-center">Register</button>
+      </div>
+    </div>
+
+</form>
+</div> -->
+<!-- 
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <div class="container d-flex justify-content-center">
+
+    <div class="d-flex flex-column justify-content-between">
+
+      <div class="card mt-3 p-5">
+        <div class="logo mb-3"><img src="https://imgur.com/zydrQCr.png"></div>
+        <div>
+        </div> <button class="btn btn-primary btn-lg"><small>Already signed up?</small><span>&nbsp;Log in</span>
+        </button>
+      </div>
+
+      
+      <div class="card two bg-white px-5 py-4 mb-3">
+        <div class="form-group">
+          <input class="mb-4" type="text" id="email" name="email" placeholder="email address" ngModel>
+          <label class="form-control-placeholder" for="email">Email</label></div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder="password" ngModel>
+          <label class="form-control-placeholder" for="password">Password</label></div>
+        <div class="form-group">
+          <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" ngModel>
+          <label class="form-control-placeholder" for="passwordConfirm">Confirm Password</label></div>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Get started<i
+              class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+      </div>
+    </div>
+
+  </div>
+
+</form> -->
+
+
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <div class="container register-form">
+
+    <div class="note">
+      <p>Register</p>
+    </div>
+
+    <div class="form-content">
+
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email" name="email" ngModel />
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control mt-3" placeholder="Password" name="password" ngModel />
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control mt-3" placeholder="Confirm Password" name="confirmPassword" ngModel />
+      </div>
+
+      <button type="submit" class="btnSubmit mt-3">Create Account</button>
+
+    </div>
+
+  </div>
+  </form>

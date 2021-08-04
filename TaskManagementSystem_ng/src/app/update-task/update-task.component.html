@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+  <span>Update Task</span>
+</mat-toolbar>
+
+
+<!-- {{data | json}} -->
+<!-- 
+
+    Table [Task] -- edit task clicked, data = task that is clicked.
+ -->
+<!-- Display form with prefilled data about TASK -->
+<br>
+<form (ngSubmit) = "updateTask(editTaskForm)" #editTaskForm="ngForm">
+
+    <!-- {{data.QuoteID}} -->
+  <div class="form-group">
+
+    <label for="Status">Status :</label>
+    <select id="Status" class="form-control mb-4" name="Status" required>
+      <option value="Open">Open</option>
+      <option value="Closed">Closed</option>
+    </select>
+
+  </div>
+
+  <div class="form-group">
+    <label for="QuoteID">Quote ID: </label>
+    <input type="number" id="QuoteID" class="form-control mb-4" name="QuoteID" 
+    [ngModel]="data.QuoteID" disabled
+    required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="QuoteType">Quote Type: </label>
+    <input type="text" id="QuoteType" class="form-control mb-4" name="QuoteType" 
+    [ngModel] = "data.Quote_Type"
+    required>
+  </div>
+
+  <div class="form-group">
+    <label for="Contact">Contact: </label>
+    <input type="text" id="Contact" class="form-control mb-4" name="Contact" 
+    [ngModel]="data.Contact"
+    required>
+  </div>
+
+  <div class="form-group">
+    <label for="TaskDescription">Task Description: </label>
+    <input type="text" id="TaskDescription" class="form-control mb-4" name="TaskDescription" 
+    [ngModel]="data.Task_Description"
+    required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="DueDate">Due Date: </label>
+    <input type="datetime-local" id="DueDate" class="form-control mb-4" name="DueDate"
+    [ngModel]="data.Due_Date"
+    required>
+  </div>
+
+  <div class="form-group">
+    <label for="TaskType">Task Type: </label>
+    <input type="text" id="TaskType" class="form-control mb-2" name="TaskType" 
+    [ngModel]="data.Task_Type"
+    required>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Submit</button>
+
+</form>

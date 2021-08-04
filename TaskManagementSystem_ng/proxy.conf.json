@@ -1,0 +1,12 @@
+{
+  "/api/*": {
+    "target": "https://localhost:44310",
+    "secure": false
+  },
+
+  "/token": {
+    "target": "https://localhost:44310",
+    "secure": false
+  }
+
+}

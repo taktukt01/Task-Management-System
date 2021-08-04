@@ -1,0 +1,68 @@
+<!--  Form? -->
+<!-- Add a Task form -->
+
+
+
+
+<!-- Template Driven Form -->
+
+<mat-toolbar>
+  &nbsp; &nbsp;
+  &nbsp;
+  &nbsp;
+
+  <span> Add a Task</span>
+</mat-toolbar>
+
+
+<form (ngSubmit) = "addTask(addTaskForm)" #addTaskForm="ngForm">
+  <!-- Row 1 -->
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label for="QuoteType">Quote Type: </label>
+      <input type="text" id="QuoteType" class="form-control mb-2" name="QuoteType" ngModel
+      required>
+    </div>
+
+    <div class="col-auto">
+      <label for="Contact">Contact: </label>
+      <input type="text" id="Contact" class="form-control mb-2" name="Contact" ngModel
+      required>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+
+      <label for="TaskDescription">Task Description: </label>
+      <input type="text" id="TaskDescription" class="form-control mb-2" name="TaskDescription" ngModel
+      required>
+    </div>
+
+
+    <!-- DatePicker here. -->
+    <div class="col-auto">
+      <label for="DueDate">Due Date: </label>
+      <input type="datetime-local" id="DueDate" class="form-control mb-2" name="DueDate" ngModel
+      required>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label for="TaskType">Task Type: </label>
+      <input type="text" id="TaskType" class="form-control mb-2" name="TaskType" ngModel
+      required>
+    </div>
+
+    <br>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+
+</form>
+
+

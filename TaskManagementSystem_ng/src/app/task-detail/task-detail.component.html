@@ -1,0 +1,50 @@
+
+    <!-- {{data.QuoteID}} -->
+ 
+    <p>
+      detail works!
+    </p>
+
+  <div class="form-group">
+    <label for="QuoteID">Quote ID: </label>
+    <input type="number" id="QuoteID" class="form-control mb-4" name="QuoteID" 
+    [ngModel]="data.QuoteID" disabled
+    >
+  </div>
+
+
+  <div class="form-group">
+    <label for="QuoteType">Quote Type: </label>
+    <input type="text" id="QuoteType" class="form-control mb-4" name="QuoteType" 
+    [ngModel] = "data.Quote_Type" disabled
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="Contact">Contact: </label>
+    <input type="text" id="Contact" class="form-control mb-4" name="Contact" 
+    [ngModel]="data.Contact" disabled
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="TaskDescription">Task Description: </label>
+    <input type="text" id="TaskDescription" class="form-control mb-4" name="TaskDescription" 
+    [ngModel]="data.Task_Description" disabled
+    >
+  </div>
+
+
+  <div class="form-group">
+    <label for="DueDate">Due Date: </label>
+    <input type="datetime-local" id="DueDate" class="form-control mb-4" name="DueDate"
+    [ngModel]="data.Due_Date"
+    disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="TaskType">Task Type: </label>
+    <input type="text" id="TaskType" class="form-control mb-2" name="TaskType" 
+    [ngModel]="data.Task_Type"
+    disabled>
+  </div>
